@@ -4,6 +4,7 @@
 
 ```shell
 docker compose up -d
+# docker compose down -v
 ```
 
 URL: <http://localhost:5601/>
