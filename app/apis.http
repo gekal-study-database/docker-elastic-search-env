@@ -1,4 +1,34 @@
 ###
+GET http://localhost:9200/_cat/indices?v
+Authorization: Basic elastic:NVCY4GatYLViDFDD
+Accept: application/json
+
+###
+PUT http://localhost:9200/users
+Authorization: Basic elastic:NVCY4GatYLViDFDD
+Content-Type: application/json
+
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0
+  },
+  "mappings": {
+    "properties": {
+      "name": {
+        "type": "text"
+      },
+      "age": {
+        "type": "integer"
+      },
+      "email": {
+        "type": "keyword"
+      }
+    }
+  }
+}
+
+###
 # @name users
 GET http://localhost:8080/api/users
 
